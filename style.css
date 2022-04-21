@@ -1,0 +1,63 @@
+/* add google font */
+
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* backup font from google fonts */
+  font-family: 'Square Peg', cursive;
+  /* background from image url */
+  background-color: #e4dcd4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23858568' fill-opacity='0.24' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+  h1{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    }
+    /* loader : positon and background effect of the loader */
+    .loader{
+      position: fixed;
+      top :0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color:rgba(129, 129, 76, 60%);
+      }
+      /* subclass image of class loader */
+    .loader img{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      /* main trick for taking to centre */
+     }
+     /* Image container edit for images */
+     .img-container{
+       margin: 20px 30%;
+      
+     }
+     .img-container img{
+       width: 100%;
+       /* for margin within spaces */
+       margin-top: 10px;
+     }
+     
+     /* for mobile tablet screens */
+     @media screen and (max-width : 600px) {
+       .img-container{
+        margin : 10px 10px;
+       }
+       .img-container img{
+         margin-top: 3px;
+       }
+       
+     }
+ 
