@@ -1,6 +1,9 @@
 // link containers from html and photosArray declaration
 const image_Container = document.getElementById('img-container');
 const loader = document.getElementById('loader');
+let ready = false;
+let imagesloaded = 0;
+let totalImages = 0;
 let photosArray = [];
 
 // Function for set attribute through seperate function(just for eliminating repeated values)
@@ -12,14 +15,17 @@ let photosArray = [];
 //
 //Display photos function using 
 function displayPhotos(){
+    imagesloaded = 0;
+    totalImages = photosArray.length;
+    console.log('total images', totalImages);
     //Run funtion for each photo of the array
     photosArray.forEach((photo) => {
         //create an achor <a> to link to unspalsh .com for each photo
         const item = document.createElement('a');
        item.setAttribute('href', photo.links.html);
-    //    setAttributes(item,{
-    //        href: photo.links.html
-//          });
+        //    setAttributes(item,{
+        //        href: photo.links.html
+        //          });
        item.setAttribute('target', '_blank');
         //create a <img> element for photos
         const img = document.createElement('img');
@@ -45,8 +51,8 @@ function displayPhotos(){
 
 
 // Unsplash API
-const apiKey =`UdNuujnNsHH7LTJLPCUu85zRm9LmvMJnMvIINFaaAuM`;
-const count = 10;
+const apiKey =`2SNlacQEbKO5RocR7VBLr2e2yUGDnZJwi3ZnTFuFEAQ`;
+const count = 30;
 const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 //Get Photos vrom Unspalsh API
@@ -54,7 +60,7 @@ async function getPhotos(){
     try {
         const response = await fetch(apiURL);
         photosArray = await response.json();
-        console.log(photosArray)  ;
+        console.log(photosArray);
         displayPhotos();
     } catch (error) {
         //Catch Error
@@ -62,11 +68,24 @@ async function getPhotos(){
 }
 //
 function imageLoaded(){
-    console.log('image loaded');
+    console.log('image4 loaded');
+    imagesloaded++;
+    console.log(imagesloaded);
+    if(imagesloaded == totalImages){
+        ready = true;
+        console.log('ready = ', ready);
+        loader.hidden = true;
+        }
 }
 //Checking when the item is scrolled at last 
 window.addEventListener('scroll', ()=>{
     console.log('scrolled');
+    if(window.innerHeight + window.scrollY >= (document.body.offsetHeight-1500) && ready){
+                getPhotos();
+                ready = false;
+    }
+
 });
+
 //On Loading
 getPhotos();
