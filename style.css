@@ -21,6 +21,7 @@ body {
     margin-bottom: 10px;
     font-size: 40px;
     letter-spacing: 2px;
+    color: rgb(2, 10, 26);
     }
     /* loader : positon and background effect of the loader */
     .loader{
@@ -29,7 +30,7 @@ body {
       bottom: 0;
       left: 0;
       right: 0;
-      background-color:rgba(129, 121, 76, 0.6);
+      background-color:rgba(189, 210, 233, 0.7);
       }
       /* subclass image of class loader */
     .loader img{
