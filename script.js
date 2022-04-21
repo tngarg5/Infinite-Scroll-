@@ -52,7 +52,7 @@ function displayPhotos(){
 
 
 // Unsplash API
-const apiKey =`2SNlacQEbKO5RocR7VBLr2e2yUGDnZJwi3ZnTFuFEAQ`;
+const apiKey =`3242_-29YRPDDhk9O4t2oVx1V2cTS8NKdXBxktJDexw`;
 const count = 5;
 const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
