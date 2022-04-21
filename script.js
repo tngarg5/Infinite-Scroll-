@@ -52,8 +52,8 @@ function displayPhotos(){
 
 
 // Unsplash API
-const apiKey =`3242_-29YRPDDhk9O4t2oVx1V2cTS8NKdXBxktJDexw`;
-const count = 5;
+const apiKey =`UdNuujnNsHH7LTJLPCUu85zRm9LmvMJnMvIINFaaAuM`;
+const count = 30;
 const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 //Get Photos vrom Unspalsh API
@@ -76,7 +76,7 @@ function imageLoaded(){
         ready = true;
         console.log('ready = ', ready);
         loader.hidden = true;
-        count =30;
+        
         }
 }
 //Checking when the item is scrolled at last 
