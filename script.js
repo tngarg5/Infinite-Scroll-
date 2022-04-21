@@ -6,6 +6,7 @@ let imagesloaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
+
 // Function for set attribute through seperate function(just for eliminating repeated values)
 // funtion setAttributess(element,attributes){
 //     for(const key in attributes){
@@ -52,7 +53,7 @@ function displayPhotos(){
 
 // Unsplash API
 const apiKey =`2SNlacQEbKO5RocR7VBLr2e2yUGDnZJwi3ZnTFuFEAQ`;
-const count = 30;
+const count = 5;
 const apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 //Get Photos vrom Unspalsh API
@@ -75,6 +76,7 @@ function imageLoaded(){
         ready = true;
         console.log('ready = ', ready);
         loader.hidden = true;
+        count =30;
         }
 }
 //Checking when the item is scrolled at last 
